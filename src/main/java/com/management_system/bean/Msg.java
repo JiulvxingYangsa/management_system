@@ -5,30 +5,30 @@ import java.util.Map;
 
 /**
  * 
- * Í¨ÓÃµÄ·µ»ØÀà
+ * Í¨ï¿½ÃµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½
  * @author Administrator
  *
  */
 public class Msg {
    
-	//×´Ì¬Âë 100-³É¹¦£¬200-Ê§°Ü
+	//å¤„ç†ç 
 	private int code;
-    //ÌáÊ¾ĞÅÏ¢
+    //æ¶ˆæ¯æé†’
 	private String msg;
-	//ÓÃ»§Òª·µ»Ø¸øä¯ÀÀÆ÷µÄÊı¾İ
+	//å°è£…æˆä¸€ä¸ªMap
 	private Map<String, Object> extend  = new HashMap<String, Object>();
 	
 	public static Msg success() {
          Msg result = new Msg();
          result.setCode(100);
-         result.setMsg("´¦Àí³É¹¦");
+         result.setMsg("å¤„ç†æˆåŠŸ");
          return result;
 	}
 	
 	public static Msg fail() {
 		Msg result = new Msg();
 		result.setCode(200);
-		result.setMsg("´¦ÀíÊ§°Ü");
+		result.setMsg("å¤„ç†å¤±è´¥");
 		return result;
 		
 		
