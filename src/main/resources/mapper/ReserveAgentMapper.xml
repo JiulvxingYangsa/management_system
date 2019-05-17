@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.management_system.dao.ReserveAgentMapper">
+    <cache></cache>
+
+    <select id="selectReserveAgentAll" resultType="com.management_system.bean.ReserveAgent">
+      SELECT c_id cId ,c_name cName ,c_email cEmail ,c_number cNumber ,c_idea cIdea ,c_time cTime FROM reserve_agent
+    </select>
+    
+    <select id="selectAentById" resultType="com.management_system.bean.ReserveAgent">
+      SELECT c_id cId ,c_name cName ,c_email cEmail ,c_number cNumber ,c_idea cIdea ,c_time cTime FROM reserve_agent WHERE c_id = #{cId,jdbcType=INTEGER}  
+    </select>
+    
+    <delete id="deleteAgentById">
+      DELETE FROM reserve_agent WHERE c_id = #{cId,jdbcType=INTEGER}
+    </delete>
+    
+</mapper>
+
