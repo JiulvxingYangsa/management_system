@@ -3,7 +3,7 @@
 <mapper namespace="com.management_system.dao.ReserveAgentMapper">
     <cache></cache>
 
-    <select id="selectReserveAgentAll" resultType="com.management_system.bean.ReserveAgent">
+    <select id="selectReserveAgentAll" resultType="com.management_system.bean.ReserveAgent" useCache="false">
       SELECT c_id cId ,c_name cName ,c_email cEmail ,c_number cNumber ,c_idea cIdea ,c_time cTime FROM reserve_agent
     </select>
     
