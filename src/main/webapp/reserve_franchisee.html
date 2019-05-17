@@ -126,7 +126,7 @@ window.onload=function(){
     
     function to_page(pn){
     	$.ajax({
-    		url:"http://120.78.199.50:8081/management_system/reserveAgentAll",
+    		url:"http://120.78.199.50:8081/fenggelou/reserveAgentAll",
     		data:"pn="+pn,
     		type:"get",
     		success:function(result){
@@ -231,7 +231,7 @@ window.onload=function(){
              //根据id获取agent的数据
              function getAgent(id){
             	   $.ajax({
-            		   url:"http://120.78.199.50:8081/management_system/getAgent/"+id,
+            		   url:"http://120.78.199.50:8081/fenggelou/getAgent/"+id,
             		   type:"GET",
             		   success:function(result){
             			   //console.log(result);
@@ -255,7 +255,7 @@ window.onload=function(){
             	//alert("确定删除【"+cName+"】吗？");
             	 if(confirm("确认删除[ "+cName+"]吗？")){
             		 $.ajax({
-            		       url:"http://120.78.199.50:8081/management_system/deleteAgent/"+cId,
+            		       url:"http://120.78.199.50:8081/fenggelou/deleteAgent/"+cId,
             		       type:"post",
             			   success:function(result){
             				   alert(result.msg);
