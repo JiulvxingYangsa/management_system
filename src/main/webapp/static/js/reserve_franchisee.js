@@ -14,7 +14,7 @@ window.onload=function(){
     		success:function(result){
     			
     			
-    			console.log(result);
+    			//console.log(result);
     			var user =result.users;
     			if(user==null){
     				alert("您还没有登陆!");
@@ -138,7 +138,7 @@ window.onload=function(){
             		   url:"getAgent/"+id,
             		   type:"GET",
             		   success:function(result){
-            			   console.log(result);
+            			   //console.log(result);
             			   var agent = result.extend.agent;
             			   var moodl_box = document.getElementById('from_box');
             			   var mHtml = template('tpl_box',agent);
@@ -195,7 +195,7 @@ window.onload=function(){
             		url:"eixtLogin", 
             		type:"get",
             		success:function(result){
-            			console.log(result);
+            			//console.log(result);
             			var code =result.code;
             			if(code==100){
             				confirm("您确定要退出吗？");
