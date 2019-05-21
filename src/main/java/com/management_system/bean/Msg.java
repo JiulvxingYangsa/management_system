@@ -15,13 +15,31 @@ public class Msg {
 	private int code;
     //消息提醒
 	private String msg;
+
+	private String users;
+
 	//封装成一个Map
+
 	private Map<String, Object> extend  = new HashMap<String, Object>();
 	
+	
+	
 	public static Msg success() {
+		  Msg result = new Msg();
+	         result.setCode(100);
+	         result.setMsg("处理成功");
+	         return result;
+		
+	}
+	
+	public static Msg success(Object users) {
          Msg result = new Msg();
          result.setCode(100);
+
+         result.setUsers(users);
+
          result.setMsg("处理成功");
+
          return result;
 	}
 	
@@ -30,8 +48,13 @@ public class Msg {
 		result.setCode(200);
 		result.setMsg("处理失败");
 		return result;
-		
-		
+	}
+	public static Msg fail(Object users) {
+        Msg result = new Msg();
+        result.setCode(100);
+        result.setMsg("处理成功");
+        result.setUsers(users);
+        return result;
 	}
 	
 	public Msg add(String key, Object value) {
@@ -43,6 +66,14 @@ public class Msg {
 	
 	
 	
+	public String getUsers() {
+		return users;
+	}
+
+	public void setUsers(Object users2) {
+		this.users = (String) users2;
+	}
+
 	public int getCode() {
 		return code;
 	}

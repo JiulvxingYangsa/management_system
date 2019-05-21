@@ -1,14 +1,28 @@
 ﻿<!DOCTYPE html>
-<html charset="UTF-8">
-
+<html lang="en" class="no-js">
 <head>
+
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title>login</title>
+<link rel="icon" type="image/x-ico" href="static/img/bitbug_favicon.ico" />
+<link rel="stylesheet" type="text/css" href="static/css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="static/css/demo.css" />
+<!--必要样式-->
+<link rel="stylesheet" type="text/css" href="static/css/component.css" />
+
+<!-- Bootstrap Styles-->
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>风格楼后台管理</title>
     <link rel="icon" type="image/x-ico" href="static/images/bitbug_favicon.ico" />
     <!-- Bootstrap Styles-->
     <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css"/>
+
     <!-- FontAwesome Styles-->
+    <link rel="icon" type="image/x-ico" href="static/images/bitbug_favicon.ico" />
     <link href="static/css/font-awesome.css" type="text/css" rel="stylesheet" />
     <!-- Morris Chart Styles-->
     <link href="static/js/morris/morris-0.4.3.min.css" type="text/css" rel="stylesheet" />
@@ -16,292 +30,47 @@
     <link href="static/css/custom-styles.css" type="text/css" rel="stylesheet" />
     <!-- Google Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-</head>
-
-<body>
-      	<!-- Modal 员工信息修改模态框-->
-	<div class="modal fade" id="empUpdateModal" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<h4 class="modal-title"  align="center">添加成员</h4>
-				</div>
-				<div class="modal-body">
-					<form class="form-horizontal">
-						<div class="form-group">
-							<label for="empName_update_input" class="col-sm-2 control-label">姓名：</label>
-							<div class="col-sm-10">
-							<p class="form-control-static" id="empName_update_static"></p>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label for="empName_update_input" class="col-sm-2 control-label">邮箱：</label>
-							<div class="col-sm-10">
-								<input type="text" name="email" class="form-control"
-									id="email_update_input" placeholder="Yangsa@jiulvxing.com">
-							    <span class="help-block"></span>
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="empName_update_input" class="col-sm-2 control-label">性别：</label>
-							<div class="col-sm-10">
-								<label class="radio-inline"> <input type="radio"
-									name="gender" id="gender1_update_input" value="M"
-									checked="checked">男
-								</label> <label class="radio-inline"> <input type="radio"
-									name="gender" id="gender2_update_input" value="F">女
-								</label>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label for="empName_update_input" class="col-sm-2 control-label">部门名：</label>
-							<div class="col-sm-4">
-								<!-- 提交部门Id -->
-								<select class="form-control" name="dId" id="dept_upate_select">
-
-								</select>
-							</div>
-						</div>
-
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-danger" data-dismiss="modal">退出</button>
-					<button type="button" class="btn btn-primary" id = "emp_update_btn">更新</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-    <div id="wrapper">
-        <nav class="navbar navbar-default top-navbar" role="navigation">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                    <span class="sr-only">Toggle navigation</span><!--切换导航-->
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">风格楼</a>
-            </div>
-
-            <ul class="nav navbar-top-links navbar-right">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                        <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-messages">
-                    	
-                        <li>
-                            <a href="#">
-                               
-                                <div>未读消息</div>
-                                
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                       
-                                
-                                <div>已读消息</div>
-                            </a>
-                        </li>
-                      
-                   
-                    </ul>
-                    <!-- /.dropdown-messages -->
-                </li>
-                <!-- /.dropdown -->
-              
-                <!-- /.dropdown -->
-               
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i>管理员：</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i>设置</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i>退出</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
-        </nav>
-        <!--/. NAV TOP  -->
-        <nav class="navbar-default navbar-side" role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
-
-                    <li>
-                        <a class="active-menu" href="index.html"><i class="fa fa-dashboard"></i> 加盟商管理</a>
-                    </li>
-                    <li>
-                        <a href="reserve_franchisee.html"><i class="fa fa-desktop"></i>预加盟商</a>
-                    </li>
-					<li>
-                        <a href="menu_display.html"><i class="fa fa-bar-chart-o"></i> 菜单展示</a>
-                    </li>
-                    <li>
-                        <a href="today_price.html"><i class="fa fa-qrcode"></i>今日特价</a>
-                    </li>
-                    
-                    <li>
-                        <a href="cook_team.html"><i class="fa fa-table"></i>厨师团队</a>
-                    </li>
-                    <li>
-                        <a href="message_synopsis.html"><i class="fa fa-edit"></i>消息与简介</a>
-                    </li>
-
-        </nav>
-        <!-- /. NAV SIDE  -->
-        <div id="page-wrapper">
-            <div id="page-inner">
-
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="page-header">
-                            加盟商管理 <small>盟友们</small>
-                        </h1>
-                    </div>
-                </div>
-                <!-- /. ROW  -->
-
-                <div class="row">
-                   
-                      <table class="table table-hover">
-                	
-                   <thead>
-                   	<tr>
-	                   	 <th>加盟商id</th>
-	                   	 <th>姓名</th>
-	                   	 <th>邮箱</th>
-	                   	 <th>联系方式</th>
-	                   	 <th>留言</th>
-	                   	 <th>提交时间</th>
-	                   	 <th>操作</th>
-                   	</tr>
-                   </thead>
-                   
-                   <tbody>
-                   	
-                   	<tr>
-                   		 <td>1</td>
-                   		 <td>杨洒</td>
-                   		 <td>yangsa@jiulvxing.com</td>
-                   		 <td>17352653641</td>
-                   		 <td>您好，我想应聘你们公司老板</td>
-                   		 <td>2019/5/15</td>
-                   		 <td>
-                   		 	  <button class="btn btn-success">查看</button>
-                   		 	  <button class="btn btn-danger">删除</button>
-                   		 </td>
-                   	</tr>
-                   	
-                   		<tr>
-                   		 <td>1</td>
-                   		 <td>杨洒</td>
-                   		 <td>yangsa@jiulvxing.com</td>
-                   		 <td>17352653641</td>
-                   		 <td>您好，我想应聘你们公司老板</td>
-                   		 <td>2019/5/15</td>
-                   		 <td>
-                   		 	  <button class="btn btn-success">查看</button>
-                   		 	  <button class="btn btn-danger">删除</button>
-                   		 </td>
-                   	</tr>
-                   	
-                   		<tr>
-                   		 <td>1</td>
-                   		 <td>杨洒</td>
-                   		 <td>yangsa@jiulvxing.com</td>
-                   		 <td>17352653641</td>
-                   		 <td>您好，我想应聘你们公司老板</td>
-                   		 <td>2019/5/15</td>
-                   		 <td>
-                   		 	  <button class="btn btn-success">查看</button>
-                   		 	  <button class="btn btn-danger">删除</button>
-                   		 </td>
-                   	</tr>
-                   	
-	                <tr>
-                   		 <td>1</td>
-                   		 <td>杨洒</td>
-                   		 <td>yangsa@jiulvxing.com</td>
-                   		 <td>17352653641</td>
-                   		 <td>您好，我想应聘你们公司老板</td>
-                   		 <td>2019/5/15</td>
-                   		 <td>
-                   		 	  <button class="btn btn-success">查看</button>
-                   		 	  <button class="btn btn-danger">删除</button>
-                   		 </td>
-                   	</tr>
-                   	
-                   	
-                   </tbody>
-                </table>
-               
-                
-                
-            
-              
-                 <!-- 分页条 -->
-							 <div style="margin-top: 10px; width: 100%;height: 100px;border: solid 0px red;text-align: center;" id="div_paging">
-						        <span id="paging">当前 1页，总 563页，总 454353条记录</span><br/>
-								<ul class="pagination" id="nav_ul">
-									  <li id="home_page"><a href="#">首页</a></li>
-									  <li><a href="#" id="next_page">«</a></li>
-	         						  <li><a>1</a></li>
-	         						  <li><a>2</a></li>
-	         						  <li><a>3</a></li>
-	         						  <li><a>4</a></li>
-	         						  <li><a>5</a></li>
-	         						  <li><a>6</a></li>
-									  <li><a href="#" id="up_page">»</a></li>
-								      <li id="back_page"><a href="#">末页</a></li>
-							      </ul>	 
-						   	 </div>
-
-			                 <div style="margin-top: 100px;text-align: center;">
-				             <footer><p>风格楼有限公司制作@版权归风格楼所有 <a href="http://120.78.199.50:8081/food/" target="_blank" title="风格楼">风格楼——Yangsa@fenggelou.com</a>
-								 风格楼 <a href="http://120.78.199.50:8081/food/" title="风格楼" target="_blank">风格楼-www.fenggelou.com</a></p></footer>
-						     </div> 
-            </div>
-            <!-- /. PAGE INNER  -->
-        </div>
-        <!-- /. PAGE WRAPPER  -->
-    </div>
-    <!-- /. WRAPPER  -->
-    <!-- JS Scripts-->
-    <!-- jQuery Js -->
     <script src="static/js/jquery.min.js"></script>
     <!-- Bootstrap Js -->
     <script src="static/js/bootstrap.min.js"></script>
     <!-- Metis Menu Js -->
     <script src="static/js/jquery.metisMenu.js"></script>
-    <!-- Morris Chart Js -->
-    <script src="static/js/morris/raphael-2.1.0.min.js"></script>
-    <script src="static/js/morris/morris.js"></script>
-    <!-- Custom Js -->
+    <!-- template -->
+    <script src="static/js/template-web.js"></script>
 
+</head>
 
-</body>
-
+<body>
+		<div class="container demo-1">
+			<div class="content">
+				<div id="large-header" class="large-header">
+					<canvas id="demo-canvas"></canvas>
+					<div class="logo_box">
+						<h3>欢迎你</h3>
+						<form action="verifyLogin" id="login_from" name="f" method="get" >
+							<div class="input_outer">
+								<span class="u_user"></span>
+								<input name="uUser" class="text" style="color: #FFFFFF !important" type="text" placeholder="请输入账户" required="">
+							</div>
+							<div class="input_outer">
+								<span class="us_uer"></span>
+								<input name="uPassword" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;" type="password" placeholder="请输入密码" required autocomplete=’tel’>
+							</div> 
+							<div class="mb2" style="text-align: center;"><button id="sub_btn" style="background-color: limegreen;width: 330px;height: 40px;border-radius: 20px;border: solid 0px;color: white;">登录</button></div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div><!-- /container -->
+		<script src="static/js/TweenLite.min.js"></script>
+		<script src="static/js/EasePack.min.js"></script>
+		<script src="static/js/rAF.js"></script>
+		<script src="static/js/demo-1.js"></script>
+		<div style="text-align:center;">
+</div>
+ 
+ 
+	</body>
 </html>
+
+

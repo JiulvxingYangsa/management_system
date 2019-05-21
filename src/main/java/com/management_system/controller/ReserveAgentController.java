@@ -2,7 +2,10 @@ package com.management_system.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,30 +26,46 @@ public class ReserveAgentController {
 	
    @ResponseBody
    @RequestMapping("/reserveAgentAll")
-   public Msg getReserveAgentAll(@RequestParam(value="pn",defaultValue="1")Integer pn) {
-	   
-	   PageHelper.startPage(pn,12);
-	   List<ReserveAgent> reserveAgents= reserveAgentService.getReserveAgentAll();
-	   PageInfo<ReserveAgent> pageInfo= new PageInfo<ReserveAgent>(reserveAgents,6); 
-	   return Msg.success().add("reserveAgent", pageInfo);
-	   
+   public Msg getReserveAgentAll(@RequestParam(value="pn",defaultValue="1")Integer pn,HttpSession session) {
+	   Object user = session.getAttribute("Users");
+	   if(user==null) {
+		   return Msg.fail(user);
+	   }else {
+		   PageHelper.startPage(pn,12);
+		   List<ReserveAgent> reserveAgents= reserveAgentService.getReserveAgentAll();
+		   PageInfo<ReserveAgent> pageInfo= new PageInfo<ReserveAgent>(reserveAgents,6); 
+		   System.err.println("===========>>"+session.getAttribute("Users"));
+	       Object users = session.getAttribute("Users");
+		   return Msg.success(users).add("reserveAgent", pageInfo);
+	}
+	  
    }
   
    @ResponseBody
    @RequestMapping(value="/getAgent/{id}",method=RequestMethod.GET)
-   public Msg getAgent(@PathVariable("id")Integer id) {
-	  
+   public Msg getAgent(@PathVariable("id")Integer id,HttpSession session) {
+	   Object user = session.getAttribute("Users");
+	   if(user==null) {
+		   return Msg.fail(user);
+	   }else {
+	
 	  ReserveAgent reserveAgent = reserveAgentService.getAgent(id);
-	  return Msg.success().add("agent", reserveAgent);
+	  Object users = session.getAttribute("Users");
+	  return Msg.success(users).add("agent", reserveAgent);
+	   }
    }	
    
    @ResponseBody
    @RequestMapping(value="/deleteAgent/{cId}",method=RequestMethod.POST)
-   public Msg deleteAgentById(@PathVariable("cId")Integer cId) {
-	   
+   public Msg deleteAgentById(@PathVariable("cId")Integer cId ,HttpSession session) {
+	   Object user = session.getAttribute("Users");
+	   if(user==null) {
+		   return Msg.fail(user);
+	   }else {
 	   reserveAgentService.deleteAgentById(cId);
-	   return Msg.success();
-	   
+	   Object users = session.getAttribute("Users");
+	   return Msg.success(users);
+	   }
    }
    
    

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.management_system.dao.ManagementUserMapper">
+
+   
+   <insert id="insertManagementUser">
+    INSERT INTO 
+    management_user(u_name,u_age,u_gender,u_number,u_user,u_password) 
+    VALUES
+    (#{uName,jdbcType=VARCHAR},#{uAge,jdbcType=INTEGER},#{uGender,jdbcType=VARCHAR},
+    #{uNumber,jdbcType=VARCHAR},#{uUser,jdbcType=VARCHAR},#{uPassword,jdbcType=VARCHAR})
+   </insert>
+
+   
+   
+
+</mapper>

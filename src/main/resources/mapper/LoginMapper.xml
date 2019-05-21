@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.management_system.dao.LoginMapper">
+
+   <select id="getByUser" resultType="com.management_system.bean.ManagementUser">
+     SELECT u_user uUser,u_password uPassword FROM management_user WHERE u_user=#{uUser,jdbcType=VARCHAR} AND u_password=#{uPassword,jdbcType=VARCHAR}
+   </select>
+
+   
+</mapper>
