@@ -32,7 +32,7 @@ public class LoginController {
 		   HttpSession session = request.getSession();
 		   session.setAttribute("Users",managementUser.getuUser());
 		   System.out.println("Êä³öÒ»ÏÂsession£º"+session.getAttribute("Users"));
-		   response.sendRedirect(request.getContextPath()+"/index.html");
+		   response.sendRedirect(request.getContextPath()+"/reserve_franchisee.html");
 	   }else {
 		   response.sendRedirect(request.getContextPath()+"/loginFail2.html");
 	}
