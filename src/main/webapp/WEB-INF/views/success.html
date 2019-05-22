@@ -6,6 +6,20 @@
     <link rel="icon" type="image/x-ico" href="static/images/bitbug_favicon.ico" />
 <title>Insert title here</title>
 </head>
+<script type="text/javascript">
+	var time=4;
+	var timer = setInterval(function(){
+	var str = document.getElementById("second");
+		if(time>=1){
+			str.innerHTML=time;
+				time--;
+		 }else{
+				clearInterval(timer);
+			    location.href = "http://120.78.199.50:8081/fenggelou/reserve_franchisee.html";
+		}
+	},1000)
+
+</script>
 <body>
 	    <div style="border: solid 0px hotpink; width: 90px;height: 90px;margin-left: 46%;margin-top: 10%;">
 	    	

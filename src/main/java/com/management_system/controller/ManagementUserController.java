@@ -1,9 +1,5 @@
 package com.management_system.controller;
 
-import java.io.IOException;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,13 +15,11 @@ public class ManagementUserController {
 	@Autowired
 	ManagementUserService managementUserService;
 	@RequestMapping("/addManagementUser")
-	public void addManagementUser(@RequestParam("uName")String uName, @RequestParam("uAge")Integer uAge, @RequestParam("uGender")String uGender, @RequestParam("uNumber")String uNumber, @RequestParam("uUser")String uUser,@RequestParam("uPassword")String uPassword ,HttpServletResponse response,HttpServletRequest request) throws IOException {
+	public String addManagementUser(@RequestParam("uName")String uName, @RequestParam("uAge")Integer uAge, @RequestParam("uGender")String uGender, @RequestParam("uNumber")String uNumber, @RequestParam("uUser")String uUser,@RequestParam("uPassword")String uPassword) {
 		
 		
 		managementUserService.insertManagementUser(uName, uAge, uGender, uNumber, uUser, uPassword);
-		
-			response.sendRedirect(request.getContextPath()+"/reserve_franchisee.html");
-	
+		return "success";
 		
 		
 	}
