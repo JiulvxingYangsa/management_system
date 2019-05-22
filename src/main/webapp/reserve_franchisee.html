@@ -68,7 +68,7 @@
 <li id="log_li"><a href="#"><i class="fa fa-user fa-fw"></i>{{users}}</a>
                         </li>
                         <li class="divider"></li>
-                        <li id="res_li"><a href="#"><i class="fa fa-user fa-fw"></i>注册</a>
+                        <li id="res_li"><a href="register.html"><i class="fa fa-user fa-fw"></i>注册</a>
                         </li>
                         <li class="divider"></li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i>设置</a>
@@ -92,10 +92,6 @@
                         </li>
 
 </script>
-
-
-
-
 
 <script type="text/html" id="tpl_box">
                       <div class="form-group">
@@ -220,91 +216,6 @@
 		</div>
 	</div> 
 	
-	<!-- 管理员注册模态框 -->
-	<div class="modal fade" id="user_res" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<h4 class="modal-title" id="myModalLabel" align="center">添加管理员</h4>
-				</div>
-				<div class="modal-body">
-					<form action="addManagementUser" method="get" class="form-horizontal">
-						<div class="form-group">
-							<label for="uName_add_input" class="col-sm-2 control-label">姓名：</label>
-							<div class="col-sm-10">
-								<input type="text" name="uName" class="form-control"
-									id="uName" placeholder="" required="">
-									<span class="help-block"></span>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label for="uAge_add_input" class="col-sm-2 control-label">年龄：</label>
-							<div class="col-sm-10">
-								<input type="number" name="uAge" class="form-control"
-									id="uAge" placeholder="" required="">
-							    <span class="help-block"></span>
-							</div>
-						</div>
-						
-						<div class="form-group">
-							<label for="uGender_add_input" class="col-sm-2 control-label">性别：</label>
-							<div class="col-sm-10">
-								<input type="text" name="uGender" class="form-control"
-									id="uGender" placeholder="男/女">
-							    <span class="help-block"></span>
-							</div>
-						</div>
-						
-						<div class="form-group">
-							<label for="uNumber_add_input" class="col-sm-2 control-label">电话：</label>
-							<div class="col-sm-10">
-								<input type="text" name="uNumber" class="form-control"
-									id="uNumber" placeholder="" required="">
-							    <span class="help-block"></span>
-							</div>
-						</div>
-						
-						
-						<div class="form-group">
-							<label for="uUser_add_input" class="col-sm-2 control-label">账号：</label>
-							<div class="col-sm-10">
-								<input type="text" name="uUser" class="form-control"
-									id="uUser" placeholder="" required="">
-							    <span class="help-block"></span>
-							</div>
-						</div>
-						
-						<div class="form-group">
-							<label for="uPassword_add_input" class="col-sm-2 control-label">密码：</label>
-							<div class="col-sm-10">
-								<input type="password" name="uPassword" class="form-control"
-									id="uPassword" placeholder="" required  autocomplete='tel'>
-							    <span class="help-block"></span>
-							</div>
-						</div>
-
-					
-				</div>
-				<div class="modal-footer" style="text-align: center;">
-					<button style="width: 150px;" type="button" class="btn btn-danger" data-dismiss="modal">退出</button>
-					<button style="width: 150px;" type="submit" class="btn btn-primary" id = "user_save_btn">提交</button>
-				</div>
-				</form>
-			</div>
-		</div>
-	</div>
-	
-	
-	
-	
-	
-
     <div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
@@ -460,15 +371,6 @@
 
 
 
-
-
-
-
-
- 
-       
-            
-
           <div style="margin-top: 100px;text-align: center;">
 	         	<footer><p>风格楼有限公司制作@版权归风格楼所有 <a href="http://120.78.199.50:8081/food/" target="_blank" title="风格楼">风格楼——Yangsa@fenggelou.com</a>
 					 风格楼 <a href="http://120.78.199.50:8081/food/" title="风格楼" target="_blank">风格楼-www.fenggelou.com</a></p></footer>
@@ -479,9 +381,6 @@
             </div>
          <!-- /. PAGE WRAPPER  -->
         </div>
-     <!-- /. WRAPPER  -->
-    <!-- JS Scripts-->
-    <!-- jQuery Js -->
    
  
 </body>

@@ -19,7 +19,7 @@
 	color: #EEE;
 	position: absolute;
 	left: 50%;
-	top:50%;
+	top:38%;
 	margin-left: -200px;
 	margin-top: -250px;
 }
@@ -55,6 +55,30 @@
 	height: 25px;
 	background: url(../img/login_ico.png);
 	background-position:  -125px 0;
+	position: absolute;
+	margin: 10px 13px;
+}
+.u_age{
+	width: 25px;
+	height: 25px;
+	background: url(../img/login_ico.png);
+	background-position:  -85px -33px;
+	position: absolute;
+	margin: 10px 13px;
+}
+.u_number{
+	width: 28px;
+	height: 30px;
+	background: url(../img/login_ico.png);
+	background-position:  -85px -111px;
+	position: absolute;
+	margin: 10px 13px;
+}
+.u_gender{
+	width: 28px;
+	height: 30px;
+	background: url(../img/8BBPKQE]J_%[CUBIENH}1`U.png);
+	background-position:  -85px -111px;
 	position: absolute;
 	margin: 10px 13px;
 }

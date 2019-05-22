@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title>风格楼管理员注册</title>
+<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="css/demo.css" />
+<!--必要样式-->
+<link rel="stylesheet" type="text/css" href="css/component.css" />
+<!--[if IE]>
+<script src="js/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+		<div class="container demo-1">
+			<div class="content">
+				<div id="large-header" class="large-header">
+					<canvas id="demo-canvas"></canvas>
+					<div class="logo_box">
+						<h3>欢迎注册</h3>
+						<form action="verifyLogin" name="f" method="post">
+							<div class="input_outer">
+								<span class="u_user"></span>
+								<input name="uName" class="text" style="color: #FFFFFF !important" type="text" placeholder="输入姓名" required="">
+							</div>
+							
+							
+							<div class="input_outer">
+								<span class="u_age"></span>
+								<input name="uAge" class="text" style="color: #FFFFFF !important" type="number" placeholder="您的年龄" required="">
+							</div>
+							
+							<div class="input_outer">
+								<span class="u_gender"><img style="width: 25px;height: 25px;" src="img/gender.png"/></span>
+								<input name="uGender" class="text" style="color: #FFFFFF !important" type="text" placeholder="您的性别" required="">
+							</div>
+							
+							<div class="input_outer">
+								<span class="u_number"></span>
+								<input name="uNumber" class="text" style="color: #FFFFFF !important" type="text" placeholder="您的电话" required="">
+							</div>
+							
+							<div class="input_outer">
+								<span class="u_user"></span>
+								<input name="uUser" class="text" style="color: #FFFFFF !important" type="text" placeholder="您的账号" required="">
+							</div>
+							
+							<div class="input_outer">
+								<span class="us_uer"></span>
+								<input name="uPassword" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;"value="" type="password" placeholder="您的密码">
+							</div>
+							<div class="mb2" style="text-align: center;"><button id="sub_btn" style="background-color: limegreen;width: 330px;height: 40px;border-radius: 20px;border: solid 0px;color: white;" type="submit">立即注册</button></div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div><!-- /container -->
+		<script src="js/TweenLite.min.js"></script>
+		<script src="js/EasePack.min.js"></script>
+		<script src="js/rAF.js"></script>
+		<script src="js/demo-1.js"></script>
+		<div style="text-align:center;">
+</div>
+	</body>
+</html>
