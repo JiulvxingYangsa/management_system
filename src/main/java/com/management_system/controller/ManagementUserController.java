@@ -28,7 +28,7 @@ public class ManagementUserController {
 		
 		try {
 			Thread.sleep(2000);
-			response.sendRedirect(request.getContextPath()+"/index.html");
+			response.sendRedirect(request.getContextPath()+"/reserve_franchisee.html");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
