@@ -24,14 +24,9 @@ public class ManagementUserController {
 		
 		managementUserService.insertManagementUser(uName, uAge, uGender, uNumber, uUser, uPassword);
 		
-		response.sendRedirect(request.getContextPath()+"/success.html");
-		
-		try {
-			Thread.sleep(2000);
 			response.sendRedirect(request.getContextPath()+"/reserve_franchisee.html");
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+	
+		
 		
 	}
 	
