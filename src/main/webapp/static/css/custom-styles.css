@@ -7,7 +7,7 @@ body {
 
  #wrapper {
     width: 100%;
-    background:#09192A;
+    background:white;/*全局背景颜色*/
 }
 
 #page-wrapper {
@@ -246,11 +246,11 @@ display: inline-block;
 position: relative;
 display: block;
 padding: 19px 15px;
-color: #77C0FD;
+color: white;
 }
 .top-navbar .nav > li > a:hover, .top-navbar .nav > li > a:focus {
 text-decoration: none;
-background-color: #225081;
+background-color: #46B8DA;
 color: #fff;
 }
 .top-navbar .dropdown-menu{
@@ -280,7 +280,7 @@ line-height: 21px;
 padding-top: 4px;
 }
 .active-menu {
-    background-color:#225081!important;
+    background-color:#E5EBF2!important;/**/
 }
 
 .arrow {
@@ -309,7 +309,7 @@ padding-top: 4px;
     padding-left: 55px;
 }
 .sidebar-collapse , .sidebar-collapse .nav{
-	background:none;
+	background:white;/**/
 }
 .sidebar-collapse .nav {
 	padding:0;
@@ -341,7 +341,7 @@ background: #172D44;
 	
 }
 .top-navbar {
-	background:#09192A;
+	background:#5BC0DE;/**/
 	border-bottom:none;
 	
 }
@@ -360,7 +360,7 @@ border:0px solid black;
      
 }
 .navbar-header {
-    background: #09192A;
+    background: ;
 }
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
 background-color: #B40101;
