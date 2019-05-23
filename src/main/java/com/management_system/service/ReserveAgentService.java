@@ -12,7 +12,7 @@ public interface ReserveAgentService {
 	public List<ReserveAgent> getReserveAgentAll();
 	
 	/**
-	 * 按id查询预加盟人员
+	 * 按id查询查看预加盟人员
 	 * @param id
 	 * @return
 	 */

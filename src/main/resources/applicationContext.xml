@@ -17,10 +17,15 @@
    <context:property-placeholder location="classpath:dbconfig.properties"/>
    
    <bean id="pooledDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-       <property name="jdbcUrl" value="${jdbc.Url}"></property>
-       <property name="driverClass" value="${jdbc.Driver}"></property>
-       <property name="user" value="${jdbc.Username}"></property>
-       <property name="password" value="${jdbc.Password}"></property>
+	       <property name="jdbcUrl" value="${jdbc.Url}"></property>
+	       <property name="driverClass" value="${jdbc.Driver}"></property>
+	       <property name="user" value="${jdbc.Username}"></property>
+	       <property name="password" value="${jdbc.Password}"></property>
+	       <property name="initialPoolSize" value="10"/>
+		   <property name="maxPoolSize" value="${cache.maxPoolSize}"/>
+		   <property name="testConnectionOnCheckin" value="false"/>
+		   <property name="testConnectionOnCheckout" value="true"/>
+		   <property name="preferredTestQuery" value="SELECT 1"/>
    </bean>
 
    <bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
