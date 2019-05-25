@@ -52,7 +52,7 @@ public class Msg {
 	public static Msg fail(Object users) {
         Msg result = new Msg();
         result.setCode(100);
-        result.setMsg("处理成功");
+        result.setMsg("处理失败");
         result.setUsers(users);
         return result;
 	}
